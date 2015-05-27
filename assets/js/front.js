@@ -22,16 +22,22 @@ jQuery( function ( $ ) {
         $( el ).parent().addClass( 'loading' );
         var product_id = $( el ).data( 'shop' );
 
-        $.post( woocommerce_params.ajax_url, {
-            action: 'woocommerce_add_to_cart',
-            product_id: product_id,
-            product_sku: '',
-            quantity: 1
-        }, function () {
+        $.ajax( {
+            type:    'POST',
+            url:     woocommerce_params.ajax_url,
+            data:    {
+                action:      'woocommerce_add_to_cart',
+                product_id:  product_id,
+                product_sku: '',
+                quantity:    1
+            },
+            success: function() {
 
-            $( el ).parent().removeClass( 'loading' );
-            $( el ).parent().addClass( 'added' );
-            $( el ).hide();
+                $( el ).parent().removeClass( 'loading' );
+                $( el ).parent().addClass( 'added' );
+                $( el ).hide();
+            },
+            async: false
         } );
     }
 } );
