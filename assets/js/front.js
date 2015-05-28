@@ -8,7 +8,7 @@ jQuery( function ( $ ) {
 
     $( '[data-shop-all]' ).click( function () {
 
-        $( this ).closest( 'div.right_column' ).find( '[data-shop]' ).each( function () {
+        $( '[data-shop]' ).each( function () {
 
             add_to_cart( this );
         } );
