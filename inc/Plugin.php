@@ -72,6 +72,7 @@ class Plugin {
 
 		if ( $_SERVER[ 'REQUEST_METHOD' ] !== 'POST' || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			|| ( defined('DOING_AJAX') && DOING_AJAX ) ) {
+
 			return;
 		}
 		$products = isset( $_POST[ 'products' ] ) ? array_slice( $_POST[ 'products' ], 0, 3 ) : array();
@@ -95,9 +96,15 @@ class Plugin {
 	function archive( $original_template ) {
 
 		global $post_type;
-		if ( 'shop_by_look' === $post_type && ! isset( $_GET[ 'post_type' ] ) ) {
-			return plugin_dir_path( __FILE__ ) . 'views/single.php';
+		if ( 'shop_by_look' === $post_type ) {
+			if ( is_single() ) {
+
+				return plugin_dir_path( __FILE__ ) . 'views/single.php';
+			}
+
+			return plugin_dir_path( __FILE__ ) . 'views/archive.php';
 		} else {
+
 			return $original_template;
 		}
 	}
@@ -105,6 +112,7 @@ class Plugin {
 	public function check_items( $old, $new, $post ) {
 
 		if ( 'nav_menu_item' === $post->post_type ) {
+
 			return;
 		}
 		$counter = get_posts( array( 'post_type' => 'shop_by_look', 'post_status' => 'publish' ) );
