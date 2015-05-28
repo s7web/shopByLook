@@ -2,8 +2,8 @@
 <?php global $woocommerce; ?>
 <div class="shop_by_look">
 	<div class="left_column">
-		<h2><?php the_title(); ?></h2>
-		<?php the_post_thumbnail( array( 400, 400 ) ); ?>
+		<h1><?php the_title(); ?></h1>
+		<?php the_post_thumbnail( 'full' ); ?>
 		<?php the_content(); ?>
 	</div>
 	<div class="right_column">

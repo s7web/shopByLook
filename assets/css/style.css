@@ -17,6 +17,9 @@
     float: left;
     width: 68%;
     margin-right: 2%; }
+  .shop_by_look.archive .left_column {
+    width: 50%;
+    margin-right: 2%; }
   .shop_by_look p {
     font-size: 14px;
     margin-top: 15px; }
@@ -25,6 +28,8 @@
     width: 30%; }
     .shop_by_look .right_column:after {
       clear: both; }
+  .shop_by_look.archive .right_column {
+    width: 48%; }
   .shop_by_look .cart {
     float: right; }
     .shop_by_look .cart:after {

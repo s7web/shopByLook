@@ -20,6 +20,12 @@
     width: 68%;
     margin-right: 2%;
   }
+  &.archive {
+    .left_column{
+      width: 50%;
+      margin-right: 2%;
+    }
+  }
   p{
     font-size:14px;
     margin-top: 15px;
@@ -29,6 +35,11 @@
     width: 30%;
     &:after{
       clear: both;
+    }
+  }
+  &.archive {
+    .right_column{
+      width: 48%;
     }
   }
   .cart{
