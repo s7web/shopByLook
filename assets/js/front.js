@@ -2,12 +2,13 @@ jQuery( function ( $ ) {
     $( '[data-shop]' ).click( function () {
 
         add_to_cart( this );
+
         return false;
     } );
 
     $( '[data-shop-all]' ).click( function () {
 
-        $( '[data-shop]' ).each( function () {
+        $( this ).closest( 'div.right_column' ).find( '[data-shop]' ).each( function () {
 
             add_to_cart( this );
         } );
