@@ -2,8 +2,15 @@
 <article class="shop_by_look">
 	<div class="left_column">
 		<h1><?php the_title(); ?></h1>
-		<?php the_post_thumbnail( 'small' ); ?>
-		<?php the_content(); ?>
+		<?php
+			the_post_thumbnail( 'small' );
+
+			$content = $post->post_content;
+			$content = apply_filters( 'the_content', $content );
+			$content = str_replace( ']]>', ']]&gt;', $content );
+
+			echo $content;
+		?>
 	</div>
 	<div class="right_column">
 		<?php $ids = get_post_meta( $post->ID, 'products', TRUE ); ?>
