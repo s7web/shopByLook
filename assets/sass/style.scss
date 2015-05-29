@@ -1,33 +1,67 @@
-
 .shop_by_look{
   position: relative;
   margin: 0 auto 40px;
   width: 100%;
   font-family: "Noto Sans",sans-serif;
-  h1, h2, h3 {
+  h2, h3 {
     margin-bottom: 15px;
+  }
+  h4 {
+    text-align: right;
+    margin: 18px 0px 24px;
   }
   table, tr, th, td, thead, tbody, tfoot {
     border: none;
   }
-  table {
-    float: right;
-    width: auto;
-    tr {
-      border-bottom: 1px solid black;
-      &:last-child {
-        border-bottom: none;
-      }
-    }
+  &.archive, table {
     td {
-      padding: 6px 20px;
-      text-align: right;
-      &:first-child {
-        padding: 6px 20px 6px 0;
-        text-align: left;
+      position: relative;
+      overflow-wrap: break-word;
+      vertical-align: top;
+      max-width: 60%;
+    }
+    table {
+      float: right;
+      width: 100%;
+      overflow-wrap: break-word;
+      tr {
+        border-bottom: 1px solid black;
+        &:last-child {
+          border-bottom: none;
+        }
       }
-      &:last-child {
-        padding: 6px 0 6px 20px;
+      td {
+        padding: 6px 10px;
+        text-align: right;
+        line-height: 18px;
+        &:first-child {
+          padding: 6px 10px 6px 0;
+          text-align: left;
+        }
+        &:last-child {
+          width: 40px;
+          padding: 6px 0 6px 10px;
+        }
+        del {
+          display:block;
+        }
+        a {
+          font-size: 14px;
+        }
+        div {
+          overflow-wrap: break-word;
+          max-width: 100%;
+        }
+      }
+      th {
+        text-align: right;
+        &:first-child {
+          padding: 6px 10px 6px 0;
+          text-align: left;
+        }
+        &:last-child {
+          padding: 6px 0 6px 10px;
+        }
       }
     }
   }
@@ -43,14 +77,8 @@
   }
   .left_column{
     display: inline-block;
-    width: 68%;
+    width: 50%;
     margin-right: 2%;
-  }
-  &.archive {
-    .left_column{
-      width: 52%;
-      margin-right: 2%;
-    }
   }
   p{
     font-size:14px;
@@ -60,15 +88,10 @@
     float: right;
     max-height: 100%;
     display: inline-block;
-    width: 29%;
+    width: 47%;
     text-align: right;
     &:after{
       clear: both;
-    }
-  }
-  &.archive {
-    .right_column{
-      width: 45%;
     }
   }
   .cart{
