@@ -7,6 +7,11 @@ namespace S7D\ShopByLook;
  */
 class Plugin {
 
+	/**
+	 * Initialize application hooks
+	 *
+	 * @return void
+	 */
 	public function run() {
 
 		add_action( 'init', array( $this, 'register_post_type' ) );
@@ -18,6 +23,13 @@ class Plugin {
 		add_action( 'transition_post_status',  array( $this, 'check_items' ), 10, 3 );
 	}
 
+	/**
+	 * Register shop_by_look post type
+	 *
+	 * @return  void
+	 *
+	 * @wp-hook init
+	 */
 	public function register_post_type() {
 
 		$labels = array(
@@ -50,9 +62,15 @@ class Plugin {
 		register_post_type( 'shop_by_look', $args );
 	}
 
+	/**
+	 * Add the meta box
+	 *
+	 * @return void
+	 *
+	 * @wp-hook add_meta_boxes_shop_by_look
+	 */
 	public function add_meta_boxes() {
 
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_meta_box(
 			'shop_by_look',
 			__( 'Products', 'shop-by-look' ),
@@ -60,6 +78,13 @@ class Plugin {
 		);
 	}
 
+	/**
+	 * Render the meta box
+	 *
+	 * @param  \WP_Post $post
+	 *
+	 * @return void
+	 */
 	public function render_meta_box( $post ) {
 
 		$all_products = get_posts( array( 'post_type' => 'product' ) );
@@ -68,6 +93,15 @@ class Plugin {
 		include 'views/meta.php';
 	}
 
+	/**
+	 * Update meta for the current shop_by_look post
+	 *
+	 * @param  int $post_id
+	 *
+	 * @return void
+	 *
+	 * @wp-hook save_post_shop_by_look
+	 */
 	public function save_meta( $post_id ) {
 
 		if ( $_SERVER[ 'REQUEST_METHOD' ] !== 'POST' || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
@@ -79,6 +113,13 @@ class Plugin {
 		update_post_meta( $post_id, 'products', $products );
 	}
 
+	/**
+	 * Load the back end script and stylesheet
+	 *
+	 * @return void
+	 *
+	 * @wp-hook admin_enqueue_scripts
+	 */
 	public function enqueue_scripts() {
 
 		$assets = plugin_dir_url( __DIR__ ) . 'assets/';
@@ -86,6 +127,13 @@ class Plugin {
 		wp_enqueue_style( 'select2', $assets . 'css/select2.css' );
 	}
 
+	/**
+	 * Load the front end script and stylesheet
+	 *
+	 * @return void
+	 *
+	 * @wp-hook wp_enqueue_scripts
+	 */
 	public function front_scripts() {
 
 		$assets = plugin_dir_url( __DIR__ ) . 'assets/';
@@ -93,9 +141,19 @@ class Plugin {
 		wp_enqueue_style( 'shop_by_look', $assets . 'css/style.css' );
 	}
 
+	/**
+	 * Change templates for the shop_by_look post type
+	 *
+	 * @param  string $original_template
+	 *
+	 * @return string
+	 *
+	 * @wp-hook template_include
+	 */
 	function archive( $original_template ) {
 
 		global $post_type;
+
 		if ( 'shop_by_look' === $post_type ) {
 			if ( is_single() ) {
 
@@ -103,20 +161,32 @@ class Plugin {
 			}
 
 			return plugin_dir_path( __FILE__ ) . 'views/archive.php';
-		} else {
-
-			return $original_template;
 		}
+
+		return $original_template;
 	}
 
+	/**
+	 * Check if the number of posts is smaller than maximum before publishing the new one
+	 *
+	 * @param  string $old
+	 * @param  string $new
+	 * @param  \WP_Post $post
+	 *
+	 * @return void
+	 *
+	 * @wp-hook transition_post_status
+	 */
 	public function check_items( $old, $new, $post ) {
 
 		if ( 'nav_menu_item' === $post->post_type ) {
 
 			return;
 		}
+
 		$counter = get_posts( array( 'post_type' => 'shop_by_look', 'post_status' => 'publish' ) );
-		if ( intval( $counter->publish ) >= 3 ) {
+
+		if ( count( $counter ) >= 3 ) {
 			wp_die( 'Cannot create more than 3 shop by look items on Free version' );
 		}
 	}
