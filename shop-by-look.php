@@ -23,7 +23,7 @@ function autoload( $class ) {
 
 	$class = str_replace( '\\', DIRECTORY_SEPARATOR, $class );
 
-	require_once( 'inc/' . $class . '.php' );
+	require_once( 'includes/' . $class . '.php' );
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\loaded' );

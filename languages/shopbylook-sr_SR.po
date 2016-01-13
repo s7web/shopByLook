@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: /var/www/vhosts/shopbylook/wp-content/plugins/shop-by-"
-"look/inc\n"
+"look/includes\n"
 
 #: /var/www/vhosts/shopbylook/wp-content/plugins/shop-by-look/inc/Plugin.php:28
 msgid "All Items"
