@@ -17,6 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 spl_autoload_register( __NAMESPACE__ . '\autoload' );
 
+/**
+ * Autoload function
+ *
+ * @param  string $class
+ *
+ * @return void
+ */
 function autoload( $class ) {
 
 	if ( strpos($class, __NAMESPACE__) !== 0 ) {
@@ -33,6 +40,11 @@ function autoload( $class ) {
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\loaded' );
 
+/**
+ * Instantiate and run the plugin
+ *
+ * @return void
+ */
 function loaded() {
 	$plugin = new Plugin();
 	$plugin->run();
