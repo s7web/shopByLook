@@ -1,9 +1,9 @@
 <?php
-get_header();
-
 if ( ! defined( 'ABSPATH' ) ) {
-exit; // Exit if accessed directly
+	exit; // Exit if accessed directly
 }
+
+get_header();
 
 $template = get_option( 'template' );
 

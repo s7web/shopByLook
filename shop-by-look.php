@@ -11,6 +11,10 @@
  */
 namespace S7D\ShopByLook;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 spl_autoload_register( __NAMESPACE__ . '\autoload' );
 
 function autoload( $class ) {

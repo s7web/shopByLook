@@ -1,4 +1,9 @@
-<?php if ( $all_products ) : ?>
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+if ( $all_products ) :
+	?>
 	<select name="products[]" multiple>
 		<?php foreach ( $all_products as $product ): ?>
 			<option

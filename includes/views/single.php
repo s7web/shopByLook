@@ -1,4 +1,10 @@
-<?php include( 'header.php' ); ?>
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+include( 'header.php' );
+?>
 <article class="shop_by_look">
 	<div>
 		<h1 class="entry_title"><?php the_title(); ?></h1>
