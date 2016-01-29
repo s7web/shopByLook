@@ -123,8 +123,8 @@ class Plugin {
 	public function enqueue_scripts() {
 
 		$assets = plugin_dir_url( __DIR__ ) . 'assets/';
-		wp_enqueue_script( 'select2', $assets . 'js/select2.js', array( 'jquery' ) );
-		wp_enqueue_style( 'select2', $assets . 'css/select2.css' );
+		wp_enqueue_script( 'select2', $assets . 'js/select2.min.js', array( 'jquery' ) );
+		wp_enqueue_style( 'select2', $assets . 'css/select2.min.css' );
 	}
 
 	/**
