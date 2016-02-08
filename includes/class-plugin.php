@@ -21,6 +21,8 @@ class Plugin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'front_scripts' ) );
 		add_action( 'transition_post_status',  array( $this, 'check_items' ), 10, 3 );
+
+		$x = load_plugin_textdomain( 'shop-by-look', FALSE, plugin_basename( __DIR__ ) . '/../languages' );
 	}
 
 	/**
