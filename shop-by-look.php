@@ -49,3 +49,17 @@ function loaded() {
 	$plugin = new Plugin();
 	$plugin->run();
 }
+
+register_activation_hook( __FILE__, __NAMESPACE__ . '\flush_rewrites' );
+
+/**
+ * Plugin activation callback function.
+ *
+ * @return void
+ */
+function flush_rewrites() {
+
+	$plugin = new Plugin();
+	$plugin->register_post_type();
+	flush_rewrite_rules();
+}
