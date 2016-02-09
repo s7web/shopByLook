@@ -1,12 +1,13 @@
 <?php
 /**
  * Plugin Name: Shop by Look
- * Description: Sell bulk products by single image.
+ * Description: Shop by Look is a WooCommerce-dependent WordPress plugin that allows the user to bulk-buy grouped products and view product groups. Its perfect for you to enable your customers to buy group of articles in desired amounts at once.
  * Author:      S7Design
  * Author URI:  http://www.s7designcreative.com
- * Version:     1.0
+ * Version:     1.0-BETA
  * Text Domain: shop-by-look
  * Domain Path: /languages
+ * Licence: GNU
  * Network: true
  */
 namespace S7D\ShopByLook;
