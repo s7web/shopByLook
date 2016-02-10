@@ -139,7 +139,7 @@ class Plugin {
 	public function front_scripts() {
 
 		$assets = plugin_dir_url( __DIR__ ) . 'assets/';
-		wp_enqueue_script( 'shop_by_look', $assets . 'js/front.js', array( 'jquery' ) );
+		wp_enqueue_script( 'shop_by_look', $assets . 'js/front.min.js', array( 'jquery' ) );
 		wp_enqueue_style( 'shop_by_look', $assets . 'css/style.css' );
 	}
 
