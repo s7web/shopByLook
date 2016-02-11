@@ -17,4 +17,4 @@ if ( $all_products ) :
 <?php else : ?>
 	<?php _e( 'No products' ); ?>
 <?php endif; ?>
-<script>jQuery('select[name="products[]"]').select2({maximumSelectionSize: 3});</script>
+<script>jQuery('select[name="products[]"]').select2();</script>

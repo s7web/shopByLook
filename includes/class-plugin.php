@@ -20,7 +20,6 @@ class Plugin {
 		add_filter( 'template_include', array( $this, 'archive' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'front_scripts' ) );
-		add_action( 'transition_post_status',  array( $this, 'check_items' ), 10, 3 );
 
 		load_plugin_textdomain( 'shop-by-look', FALSE, plugin_basename( __DIR__ ) . '/../languages' );
 	}
@@ -111,7 +110,7 @@ class Plugin {
 
 			return;
 		}
-		$products = isset( $_POST[ 'products' ] ) ? array_slice( $_POST[ 'products' ], 0, 3 ) : array();
+		$products = isset( $_POST[ 'products' ] ) ? $_POST[ 'products' ] : array();
 		update_post_meta( $post_id, 'products', $products );
 	}
 
@@ -166,30 +165,5 @@ class Plugin {
 		}
 
 		return $original_template;
-	}
-
-	/**
-	 * Check if the number of posts is smaller than maximum before publishing the new one
-	 *
-	 * @param  string $old
-	 * @param  string $new
-	 * @param  \WP_Post $post
-	 *
-	 * @return void
-	 *
-	 * @wp-hook transition_post_status
-	 */
-	public function check_items( $old, $new, $post ) {
-
-		if ( 'nav_menu_item' === $post->post_type ) {
-
-			return;
-		}
-
-		$counter = get_posts( array( 'post_type' => 'shop_by_look', 'post_status' => 'publish' ) );
-
-		if ( count( $counter ) >= 3 ) {
-			wp_die( 'Cannot create more than 3 shop by look items on Free version' );
-		}
 	}
 }

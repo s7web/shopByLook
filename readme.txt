@@ -38,7 +38,7 @@ Please check is Woocommerce plugin exists, and is it activated in 'Plugins' Word
 
 = How to create new shop by look product page? =
 
-Go to Shop by Look menu item from Wordpress menu in Dashboard. Click add new, next add title, content, featured image, next enter exact name of your Woocommerce product in meta field bellow, after that product is added to shop by look page. Note you are able to enter 3 products per shop by look page, because this is free BETA version.
+Go to Shop by Look menu item from Wordpress menu in Dashboard. Click add new, next add title, content, featured image, next enter exact name of your Woocommerce product in meta field bellow, after that product is added to shop by look page.
 
 = I have started to create new Shop by look page, and when I enter Woocommerce product name nothing happens  = 
 
@@ -53,7 +53,6 @@ Please ensure that Woocommerce product exist, and that you have spelled name cor
 
 = 1.0 BETA =
 * Possibility to group Woocommerce products all on one page and sell them together
-* Support for 3 products per shop by look page
 * Shop by look styled for default Wordpress themes
 
 == Upgrade Notice ==
