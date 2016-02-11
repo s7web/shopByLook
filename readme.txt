@@ -40,10 +40,6 @@ Please check is Woocommerce plugin exists, and is it activated in 'Plugins' Word
 
 Go to Shop by Look menu item from Wordpress menu in Dashboard. Click add new, next add title, content, featured image, next enter exact name of your Woocommerce product in meta field bellow, after that product is added to shop by look page.
 
-= I have started to create new Shop by look page, and when I enter Woocommerce product name nothing happens  = 
-
-Please ensure that Woocommerce product exist, and that you have spelled name correctly. Also check if there is more then 3 products on that page already.
-
 == Screenshots ==
 
 1. /assets/screenshot-1.png
