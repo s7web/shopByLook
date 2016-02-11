@@ -81,7 +81,7 @@ function check_is_woocommerce_is_active() {
 
 		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		deactivate_plugins( plugin_basename( __FILE__ ), true );
-    	add_action( 'admin_notices', __NAMESPACE__ . '\error_notice' ); 
+		add_action( 'admin_notices', __NAMESPACE__ . '\error_notice' ); 
 	}
 }
 
@@ -95,5 +95,5 @@ function check_is_woocommerce_is_active() {
 function error_notice() {
 
 	$message = __( 'Woocommerce must be active in order to activate Shop by Look plugin. Currently Shop by Look plugin is deactivated.', 'shop-by-look' );
-    echo"<div class='error updated notice is-dismissible'> <p>$message <button type='button' class='notice-dismiss'><span class='screen-reader-text'>Dismiss this notice.</span></button></p></div>"; 
+	echo"<div class='error updated notice is-dismissible'> <p>$message <button type='button' class='notice-dismiss'><span class='screen-reader-text'>Dismiss this notice.</span></button></p></div>"; 
 }
