@@ -9,6 +9,13 @@ class Plugin {
 
 	/**
 	 * Initialize application hooks
+	 * 
+	 * Following hooks are set here: 
+	 * 									- init ( for custom post type registration purposes )
+	 *          						- add_meta_boxes_shop_by_look ( adds custom meta box to shop by look custom post type )
+	 *                					- admin_enqueue_scripts ( Include necessary scripts for admin interface )
+	 *                     				- wp_enqueue_scripts ( Include necessary scripts for front end interface )
+	 *                         			- template_include ( For template redirect, in order to have specific look for shop by look pages )
 	 *
 	 * @return void
 	 */
@@ -26,6 +33,8 @@ class Plugin {
 
 	/**
 	 * Register shop_by_look post type
+	 * 
+	 * Set labels for all custom post titles and menu items, registers custom post type.
 	 *
 	 * @return  void
 	 *
@@ -65,6 +74,8 @@ class Plugin {
 
 	/**
 	 * Add the meta box
+	 * 
+	 * Adds meta box on Create and Edit Interface of Shop By Look custom posts.
 	 *
 	 * @return void
 	 *
@@ -81,6 +92,8 @@ class Plugin {
 
 	/**
 	 * Render the meta box
+	 * 
+	 * Display custom meta field on Shop by Look custom posts in admin. This function is callback for add_meta_box called in Plugin::add_meta_boxex
 	 *
 	 * @param  \WP_Post $post
 	 *
@@ -96,6 +109,8 @@ class Plugin {
 
 	/**
 	 * Update meta for the current shop_by_look post
+	 * 
+	 * On Shop by Look custom post save, related custom meta will be saved also by hand of this function.
 	 *
 	 * @param  int $post_id
 	 *
@@ -115,7 +130,7 @@ class Plugin {
 	}
 
 	/**
-	 * Load the back end script and stylesheet
+	 * Load scripts ( js ) and styles ( css ) for admin interface of Shop By Look plugin
 	 *
 	 * @return void
 	 *
@@ -129,7 +144,7 @@ class Plugin {
 	}
 
 	/**
-	 * Load the front end script and stylesheet
+	 * Load scripts ( js ) and styles ( css ) for Shop By Look front end interface
 	 *
 	 * @return void
 	 *
@@ -143,7 +158,9 @@ class Plugin {
 	}
 
 	/**
-	 * Change templates for the shop_by_look post type
+	 * Redirect to custom template
+	 * 
+	 * Redirect views of single, and archive shop by look front end templates to custom made templates in order to have specific look on front end.
 	 *
 	 * @param  string $original_template
 	 *
