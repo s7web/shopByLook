@@ -34,7 +34,7 @@ class Plugin {
 	/**
 	 * Register shop_by_look post type
 	 * 
-	 * Set labels for all custom post titles and menu items, registers custom post type.
+	 * Set labels for all custom post titles and menu items, register custom post type.
 	 *
 	 * @return  void
 	 *
@@ -93,7 +93,7 @@ class Plugin {
 	/**
 	 * Render the meta box
 	 * 
-	 * Display custom meta field on Shop by Look custom posts in admin. This function is callback for add_meta_box called in Plugin::add_meta_boxex
+	 * Display custom meta field on Shop by Look custom posts in admin. This function is callback for add_meta_box called in Plugin::add_meta_boxes
 	 *
 	 * @param  \WP_Post $post
 	 *
