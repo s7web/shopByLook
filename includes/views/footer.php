@@ -1,7 +1,8 @@
 <?php
 /**
  * Template: Footer
- * Description: Footer section for Shop By Look pages, included in all custom templates. Note this is not Footer of Wordpress theme this is only bottom section of content for Shop By Look page.
+ * Description: Footer section for Shop By Look pages, included in all custom templates.
+ * Note this is not Footer of Wordpress theme this is only bottom section of content for Shop By Look page.
  * 
  */
 

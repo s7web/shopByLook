@@ -1,7 +1,8 @@
 <?php
 /**
  * Template: Single post view
- * Description: Displays single post of shop by look CPT. It shows thumbnail image of grouped products along with list of Woocommerce articles on that picture.
+ * Description: Displays single post of shop by look CPT. 
+ * It shows thumbnail image of grouped products along with list of Woocommerce articles on that picture.
  * provides option to buy all at once, or just selected. 
  */
 
