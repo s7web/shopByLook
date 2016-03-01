@@ -11,11 +11,11 @@ class Plugin {
 	 * Initialize application hooks
 	 * 
 	 * Following hooks are set here: 
-	 * 									- init ( for custom post type registration purposes )
-	 *          						- add_meta_boxes_shop_by_look ( adds custom meta box to shop by look custom post type )
-	 *                					- admin_enqueue_scripts ( Include necessary scripts for admin interface )
-	 *                     				- wp_enqueue_scripts ( Include necessary scripts for front end interface )
-	 *                         			- template_include ( For template redirect, in order to have specific look for shop by look pages )
+	 *  - init ( for custom post type registration purposes )
+	 *  - add_meta_boxes_shop_by_look ( adds custom meta box to shop by look custom post type )
+	 *  - admin_enqueue_scripts ( Include necessary scripts for admin interface )
+	 *  - wp_enqueue_scripts ( Include necessary scripts for front end interface )
+	 *  - template_include ( For template redirect, in order to have specific look for shop by look pages )
 	 *
 	 * @return void
 	 */
