@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template: Header
+ * Description: Header section for Shop By Look pages, included in all custom templates. Note this is not Header of Wordpress theme this is only top section of content for Shop By Look page.
+ * 
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Template: Meta section in admin of Shop by Look
+ * Description: Used to display input fields for products on Shop By Look CPT create and edit post interface
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }

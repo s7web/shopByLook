@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template: Shop By Look archive template
+ * Description: Displays list of posts for Shop By Look CPT
+ * 
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
