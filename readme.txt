@@ -1,7 +1,7 @@
 === Shop by Look ===
 Contributors: s7design
 Donate link: 
-Tags: Shop, Look, plugin, custom, style, shop, buy, image, picture, creative, online, unique, sell
+Tags: Shop, Look, style, shop, image, picture, creative, online, unique, Woocommerce
 Requires at least: 4.1
 Tested up to: 4.4.2
 Stable tag: 1.0
